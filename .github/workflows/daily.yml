@@ -1,0 +1,27 @@
+name: Run Daily News Crawler
+
+on:
+  schedule:
+    - cron: '23 23 * * *'  # 매일 KST 오전 8시 (UTC 23:00 전날)
+  workflow_dispatch:
+
+jobs:
+  run-crawler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run crawler script
+        run: node index.js
+
+Add GitHub Actions for daily crawl

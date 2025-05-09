@@ -18,6 +18,14 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Cache Puppeteer Chromium
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            puppeteer-cache-${{ runner.os }}-
+
       - name: Install dependencies
         run: npm install
 

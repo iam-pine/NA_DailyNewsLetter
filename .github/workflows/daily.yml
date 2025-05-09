@@ -23,5 +23,3 @@ jobs:
 
       - name: Run crawler script
         run: node index.js
-
-Add GitHub Actions for daily crawl

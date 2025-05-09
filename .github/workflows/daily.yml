@@ -22,7 +22,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/puppeteer
-          key: puppeteer-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: puppeteer-cache-v2-${{ runner.os }}-${{ hashFiles('package.json') }}
           restore-keys: |
             puppeteer-cache-${{ runner.os }}-
 

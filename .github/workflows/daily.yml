@@ -27,7 +27,7 @@ jobs:
             puppeteer-cache-${{ runner.os }}-
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run crawler script
         run: node index.js

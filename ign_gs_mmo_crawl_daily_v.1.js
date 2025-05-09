@@ -1,8 +1,8 @@
 // 게임 뉴스 크롤링 통합 코드 (Gamespot, IGN, MassivelyOP)
-const puppeteer = require('puppeteer');
-const axios = require('axios');
-const https = require('https');
-const moment = require('moment-timezone');
+import puppeteer from 'puppeteer';
+import axios from 'axios';
+import https from 'https';
+import moment from 'moment-timezone';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 

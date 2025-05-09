@@ -30,4 +30,4 @@ jobs:
         run: npm ci
 
       - name: Run crawler script
-        run: node index.js
+        run: node ign_gs_mmo_crawl_daily_v.1.js

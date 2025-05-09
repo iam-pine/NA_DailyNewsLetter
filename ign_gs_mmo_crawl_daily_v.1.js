@@ -33,7 +33,10 @@ function parseRelativeDateToMoment(text) {
 }
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+  headless: true,
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
   const page = await browser.newPage();
   const nowKST = moment().tz('Asia/Seoul');
   const todayStr = nowKST.format('YYYY-MM-DD');

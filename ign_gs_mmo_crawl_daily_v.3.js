@@ -77,7 +77,7 @@ for (let i = 1; i <= maxPage; i++) {
     ).tz('Asia/Seoul');
     const diffHours = nowKST.diff(articleMoment, 'hours');
 
-    if (diffHours <=72 && article.comments >= 0) {
+    if (diffHours <=24 && article.comments >= 0) {
       const formattedDate = articleMoment.format('YYYY-MM-DD HH:mm');
       const tempPage = await browser.newPage();
       let bodyText = '', imageUrl = '';
@@ -167,7 +167,7 @@ for (let i = 1; i <= maxPage; i++) {
 
       articleMoment = moment.parseZone(publishedTime).tz('Asia/Seoul');
       const diffHours = nowKST.diff(articleMoment, 'hours');
-      if (diffHours > 72 || article.comments < 0) continue;
+      if (diffHours > 24 || article.comments < 0) continue;
 
       const formattedDate = articleMoment.format('YYYY-MM-DD HH:mm');
 
@@ -227,7 +227,7 @@ for (let i = 1; i <= maxPage; i++) {
     const articleMoment = moment.parseZone(article.dateText).tz('Asia/Seoul');
     const diffHours = nowKST.diff(articleMoment, 'hours');
 
-    if (diffHours <= 72 && article.comments >= 0) {
+    if (diffHours <= 24 && article.comments >= 0) {
       const formattedDate = articleMoment.format('YYYY-MM-DD HH:mm');
       const tempPage = await browser.newPage();
       let bodyText = '', imageUrl = '';

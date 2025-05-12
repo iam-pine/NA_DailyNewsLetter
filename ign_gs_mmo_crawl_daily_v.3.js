@@ -273,7 +273,7 @@ await massPage.close();
 
   if (articlePayloads.length > 0) {
     await axios.post(
-      'https://hook.us2.make.com/e1vaglu6r9fqqetup74n2ez5wf99imir',
+      'https://hook.us2.make.com/gnk7qxotdkld34sqdh99r1nl4ck0eudk',
       { articles: finalText },
       { httpsAgent: new https.Agent({ rejectUnauthorized: false }) }
     );

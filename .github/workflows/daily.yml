@@ -2,7 +2,7 @@ name: Run Daily News Crawler
 
 on:
   schedule:
-    - cron: '55 22 * * 2-6'   # KST 화~토 오전 7:55 (UTC: 전날 22:55)
+    - cron: '55 22 * * 1-5'   # KST 화~토 오전 7:55 (UTC: 전날 22:55)
   workflow_dispatch:
 
 jobs:

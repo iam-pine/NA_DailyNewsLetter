@@ -1,0 +1,33 @@
+name: Run Daily News Crawler (MON SUN)
+
+on:
+  schedule:
+    - cron: '55 22 * * 0,1'   # KST 화~토 오전 7:55 (UTC: 전날 22:55)
+  workflow_dispatch:
+
+jobs:
+  run-crawler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Cache Puppeteer Chromium
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-cache-v2-${{ runner.os }}-${{ hashFiles('package.json') }}
+          restore-keys: |
+            puppeteer-cache-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run crawler script
+        run: node ign_gs_mmo_crawl_daily_v.4.js
